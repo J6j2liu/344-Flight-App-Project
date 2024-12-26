@@ -1,0 +1,11 @@
+#Verify that a search with no returns gives correct message
+
+# commands to execute:
+search "Seattle WA" "Bristol/Johnson City/Kingsport TN" 1 1 1
+quit
+*
+
+# expected output
+No flights match your selection
+Goodbye
+*

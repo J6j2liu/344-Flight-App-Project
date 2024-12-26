@@ -1,0 +1,67 @@
+# Two terminals will create users. Tehn each terminal will try to login
+# to the user made by the other terminal
+
+
+# Terminal 1's inputs:
+create user1 user1 10000
+login user2 user2
+quit
+*
+
+# Scenario 1 of 4: Terminal 2 finished creating the user and Terminal 1 can log in
+Created user user1
+Logged in as user2
+Goodbye
+|
+
+
+# Scenario 2 of 4: Terminal 2 hasn't finished creating the user and Terminal 1 cannot log in
+Created user user1
+Login failed
+Goodbye
+|
+
+# Scenario 2 of 4: Terminal 2 finished creating the user and Terminal 1 can log in
+Created user user1
+Logged in as user2
+Goodbye
+|
+
+
+# Scenario 4 of 4: Terminal 2 hasn't finished creating the user and Terminal 1 cannot log in
+Created user user1
+Login failed
+Goodbye
+*
+
+##################### Concurrently executed commands: #####################
+
+# Terminal 2's inputs:
+create user2 user2 10000
+login user1 user1
+quit
+*
+
+# Scenario 1 of 4: Terminal 1 finished creating the user and Terminal 2 can log in
+Created user user2
+Logged in as user1
+Goodbye
+|
+
+# Scenario 2 of 4: Terminal 1 hasn't finished creating the user and Terminal 2 cannot log in
+Created user user2
+Login failed
+Goodbye
+|
+
+# Scenario 3 of 4: Terminal 1 finished creating the user and Terminal 2 can log in
+Created user user2
+Login failed
+Goodbye
+|
+
+# Scenario 4 of 4: Terminal 1 hasn't finished creating the user and Terminal 2 cannot log in
+Created user user2
+Logged in as user1
+Goodbye
+*

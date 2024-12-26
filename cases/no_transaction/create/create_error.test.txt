@@ -1,0 +1,18 @@
+# Verify we cannot create two users with the same username 
+# also verify that you cannot create a user with a negative balance
+
+# commands to execute:
+create user1 user1 100
+create user1 user1 100
+create user2 123123 1000
+create user3 123123 -10
+quit
+*
+
+# expected output from those commands:
+Created user user1
+Failed to create user
+Created user user2
+Failed to create user
+Goodbye
+*
